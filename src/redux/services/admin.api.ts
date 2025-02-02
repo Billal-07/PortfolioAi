@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { getSession, signOut, useSession } from "next-auth/react";
+import { getSession, signOut } from "next-auth/react";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: process.env.NEXT_PUBLIC_API_URL,
@@ -25,6 +25,18 @@ const baseQueryWithReauth = async (args: any, api: any, extraOptions: any) => {
     return { error };
   }
 };
+// const baseQueryWithReauth = async (args: any, api: any, extraOptions: any) => {
+//   try {
+//     let result = await baseQuery(args, api, extraOptions);
+
+//     if (result?.error?.status === 401) {
+//       signOut();
+//     }
+//     return { data: result?.data };
+//   } catch (error) {
+//     return { error };
+//   }
+// };
 
 export const portfolioApi = createApi({
   reducerPath: "portfolioApi",
