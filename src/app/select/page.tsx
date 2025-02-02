@@ -18,6 +18,9 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import Template1 from '../Template1/page'
+import Template2 from '../Template2/page'
+import Template3 from '../Template3/page'
 
 function SelectTabs() {
   return (
@@ -30,6 +33,9 @@ function SelectTabs() {
         <div className="flex justify-between gap-4 mt-4 pb-4">
           {[1, 2, 3].map((index) => (
             <Card key={index} className="flex-shrink-0 w-[300px]">
+              {/* <Template1 />  */}
+              {/* <Template2 />  */}
+              {/* <Template3 />  */}
               <CardHeader>
                 <CardTitle>Account</CardTitle>
                 <CardDescription>Make changes to your account here. Click save when you're done.</CardDescription>

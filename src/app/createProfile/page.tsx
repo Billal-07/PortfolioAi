@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface SocialLinks {
@@ -17,7 +18,7 @@ const CreateProfile: React.FC = () => {
         facebook: "",
         instagram: "",
     });
-    const [avatar, setAvatar] = useState<string>("https://via.placeholder.com/150");
+    const [avatar, setAvatar] = useState<string>("https://icons.veryicon.com/png/o/miscellaneous/user-avatar/user-avatar-male-5.png");
     const [selectedImageOption, setSelectedImageOption] = useState<string | null>(null);
     const [vectorizedImage, setVectorizedImage] = useState<string | null>(null);
     const [uploadedImageFile, setUploadedImageFile] = useState<File | null>(null);
@@ -246,9 +247,11 @@ const CreateProfile: React.FC = () => {
                         </label>
                     </div>
                 </div>
-                <button className="mt-6 w-1/2 px-6 py-2 bg-purple-500 text-black font-semibold rounded-lg hover:bg-purple-600">
-                    Next
-                </button>
+                <Link href={'select'} className="w-full flex justify-center">
+                    <button className="mt-6 w-1/2 px-6 py-2 bg-purple-500 text-black font-semibold rounded-lg hover:bg-purple-600">
+                        Next
+                    </button>
+                </Link>
             </div>
         </div>
     );

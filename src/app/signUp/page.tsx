@@ -1,11 +1,12 @@
 'use client'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 
 export default function signUp() {
     const router = useRouter()
 
-    const handleSignUp = async ( event : any ) => {
-        event.preventDefault(); 
+    const handleSignUp = async (event: any) => {
+        event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
 
@@ -110,12 +111,14 @@ export default function signUp() {
                             className="w-full px-4 py-2 text-purple-900 rounded-md bg-transparent border-2 border-gray-700 outline-none focus:ring-2 focus:ring-purple-500"
                         />
                     </div>
-                    <button
-                        type="submit"
-                        className="w-full py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition"
-                    >
-                        Create account
-                    </button>
+                    <Link href={'/createProfile'}>
+                        <button
+                            type="submit"
+                            className="w-full mt-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition"
+                        >
+                            Create account
+                        </button>
+                    </Link>
                 </form>
             </div>
         </div>
