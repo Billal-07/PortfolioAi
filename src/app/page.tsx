@@ -1,12 +1,13 @@
-'use client'
+// 'use client'
 import Image from 'next/image'
 import map from './images/mapbase.png';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { useRouter } from 'next/navigation'
+import Link from 'next/link';
+// import { useRouter } from 'next/navigation'
 
 // import { signIn } from "next-auth/react";
 export default function Home() {
-  const router = useRouter()
+  // const router = useRouter()
   // const res = await signIn("credentials", {
   //   redirect: false,
   //   email,
@@ -52,12 +53,16 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="mt-10 space-x-10">
-          <button onClick={() => router.push('/signIn')} className="px-10 py-5 rounded-3xl bg-gray-300 text-2xl text-purple-700 hover:bg-purple-700 hover:text-white transition-colors">
+          <Link href={"/signIn"}>
+          <button  className="px-10 py-5 rounded-3xl bg-gray-300 text-2xl text-purple-700 hover:bg-purple-700 hover:text-white transition-colors">
             Login
           </button>
-          <button onClick={() => router.push('/signUp')} className="px-10 py-5 rounded-3xl bg-gray-300 text-2xl text-purple-700 hover:bg-purple-700 hover:text-white transition-colors">
+          </Link>
+          <Link href={"/signUp"}>
+          <button  className="px-10 py-5 rounded-3xl bg-gray-300 text-2xl text-purple-700 hover:bg-purple-700 hover:text-white transition-colors">
             SignUp
           </button>
+          </Link>
         </div>
       </div>
 

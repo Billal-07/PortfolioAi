@@ -10,7 +10,7 @@ export default function signUp() {
         const password = event.target.password.value;
 
         try {
-            const response = await fetch('http://api.streeteats.thesuitchstaging2.com:4000/api/v1/user/auth/signup', {
+            const response = await fetch('https://api.streeteats.thesuitchstaging2.com:4000/api/v1/user/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
